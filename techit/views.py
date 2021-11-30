@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from .forms import AppointmentForm,ContactForm
+from .forms import AppointmentForm,ContactForm,ContactusForm,CommentForm
 from django.http import HttpResponseRedirect
-from.models import Brand, Testimonial,Demo,Expert,Service,Award,Banner
+from django.contrib import messages
+from.models import Brand, Testimonial,Demo,Expert,Service,Award,Banner,Design,Post
 # Create your views here.
 
 def home (request):
@@ -88,3 +89,96 @@ def about(request):
         
     }
     return render(request,'app/about.html',context)
+
+def itservice (request):
+    designs=Design.objects.all()
+
+    context={
+        'designs':designs,
+
+
+    }
+
+    return render(request,'app/it-services.html',context)
+
+def contact_us (request):
+    
+    
+    if request.method == 'POST':
+        
+        contacts_form = ContactusForm(request.POST)
+        
+        
+        if contacts_form.is_valid():
+            
+            contacts_form.save()
+           
+            # redirect to a new URL:
+            return HttpResponseRedirect(request.path_info)
+        
+        
+        
+        
+    
+    
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        contacts_form = ContactusForm()
+
+
+    context={
+        
+    }
+    return render(request,'app/contact-us.html',context)
+
+
+def blog (request):
+    posts=Post.objects.all()
+
+    context={
+        'posts':posts,
+
+
+    }
+
+    return render(request,'app/blog.html',context)
+
+
+def blog_details (request, slug):
+    post = Post.objects.get(slug=slug)
+    
+    comments = post.comments.filter(approve=True)
+    
+    if request.method == 'POST':
+        
+        comment_form = CommentForm(request.POST)
+        
+        if comment_form.is_valid():
+            
+            new_comment = comment_form.save(commit=False)
+            
+            new_comment.post = post
+            
+            new_comment.save()
+            # redirect to a new URL:
+            
+            messages.success(request, 'Your comment submitted.')
+            return HttpResponseRedirect(request.path_info)
+
+    
+    
+    
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        
+        comment_form = CommentForm()
+    
+    
+    context={
+        'post':post,
+        'comments':comments
+    
+
+    }
+
+    return render (request,'app/details.html',context)

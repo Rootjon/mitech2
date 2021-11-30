@@ -7045,7 +7045,7 @@ ul.footer-widget__horizontal-list li {
 
 .check-list .list-item::before {
   color: #086AD8;
-  content: '\f00c';
+  
   position: absolute;
   top: 5px;
   left: 0;
