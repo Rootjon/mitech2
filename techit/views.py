@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import AppointmentForm,ContactForm,ContactusForm,CommentForm
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 from django.contrib import messages
 from.models import Brand, Testimonial,Demo,Expert,Service,Award,Banner,Design,Post
 # Create your views here.
@@ -182,3 +183,85 @@ def blog_details (request, slug):
     }
 
     return render (request,'app/details.html',context)
+
+def search_blog(request):
+    queryset1 = Testimonial.objects.all()
+    queryset2 = Demo.objects.all()
+    queryset3 = Expert.objects.all()
+    queryset4 = Service.objects.all()
+    queryset5 = Award.objects.all()
+    queryset6 = Banner.objects.all()
+    queryset7 = Design.objects.all()
+    queryset8 = Post.objects.all()
+    brands=Brand.objects.all()
+    
+    
+    query = request.GET.get('q')
+
+  
+
+    if query:
+        queryset1=queryset1.filter(
+            Q(title__icontains=query) | Q(designation__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset2=queryset2.filter(
+            Q(title__icontains=query) | Q(designation__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset3=queryset3.filter(
+            Q(title__icontains=query) | Q(designation__icontains=query) 
+
+
+        ).distinct()
+        
+        queryset4=queryset4.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset5=queryset5.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset6=queryset6.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset7=queryset7.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+        
+        queryset8=queryset8.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+
+        ).distinct()
+            
+           
+    context = {
+        "queryset1":queryset1,
+        "queryset2":queryset2,
+        "queryset3":queryset3,
+        "queryset4":queryset4,
+        "queryset5":queryset5,
+        "queryset6":queryset6,
+        "queryset7":queryset7,
+        "queryset8":queryset8,
+        'brands':brands,
+        
+        'query':query,
+       
+    }
+    return render(request,'app/search.html', context)
