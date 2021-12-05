@@ -50,19 +50,21 @@
                             </a>
                         </div>
 
-                        <div class="header-right flexible-image-slider-wrap">
+                      
 
-                            <div class="header-right-inner" id="hidden-icon-wrapper">
-                                <!-- Header Search Form -->
-                                <div class="header-search-form d-md-none d-block">
-                                    <form action="{% url 'techit:search' %}" class="search-form-top">
-                                        <input class="search-field" name="q" type="text" placeholder="Search…">
-                                        <button class="search-submit">
-                                            <i class="search-btn-icon fa fa-search"></i>
-                                        </button>
-                                    </form>
-                                </div>
+                                <div class="header-right flexible-image-slider-wrap">
 
+                                    <div class="header-right-inner" id="hidden-icon-wrapper">
+                                        <!-- Header Search Form -->
+                                        <div class="header-search-form d-md-none d-block">
+                                            <form action="{% url 'techit:search' %}" class="search-form-top">
+                                                <input class="search-field" type="search" name="q" placeholder="Search…">
+                                                <button class="search-submit">
+                                                    <i class="search-btn-icon fa fa-search"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                
                                 <!-- Header Top Info -->
                                 <div class="swiper-container header-top-info-slider-werap top-info-slider__container swiper-container-initialized swiper-container-horizontal">
                                     <div class="swiper-wrapper header-top-info-inner default-color" style="transition-duration: 0ms; transform: translate3d(-698px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" style="width: 319px; margin-right: 30px;" data-swiper-slide-index="3">
@@ -152,15 +154,16 @@
                                 </div>
 
                             </div>
+                            
+                            <!-- hidden icons menu -->
+                            <div class="hidden-icons-menu d-block d-md-none" id="hidden-icon-trigger">
+                                <a href="javascript:void(0)">
+                                    <i class="search-btn-icon fa fa-search"></i>
+                                </a>
+                            </div>
                             <!-- mobile menu -->
                             <div class="mobile-navigation-icon d-block d-xl-none" id="mobile-menu-trigger">
                                 <i></i>
-                            </div>
-                            <!-- hidden icons menu -->
-                            <div class="hidden-icons-menu d-block d-md-none" id="hidden-icon-trigger">
-                                <a href="">
-                                    <i class="far fa-ellipsis-h-alt"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -344,67 +347,7 @@
         <i class="arrow-bottom fas fa-cloud-upload-alt"></i>
     </a>
     <!--====================  End of scroll top  ====================-->
-    <!-- Start Toolbar -->
-    <div class="demo-option-container">
-        <!-- Start Toolbar -->
-        <div class="aeroland__toolbar">
-            <div class="inner">
-                <a class="quick-option hint--bounce hint--left hint--black primary-color-hover-important" href="#" aria-label="Quick Options">
-                    <i class="fal fa-project-diagram"></i>
-                </a>
-                <a class="hint--bounce hint--left hint--black primary-color-hover-important" target="_blank" href="https://hasthemes.com/contact-us/" aria-label="Support Center">
-                    <i class="fal fa-life-ring"></i>
-                </a>
-                <a class="hint--bounce hint--left hint--black primary-color-hover-important" target="_blank" href="https://1.envato.market/c/417168/275988/4415?subId1=hastheme&amp;subId2=mitech-preview&amp;subId3=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource&amp;u=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource" aria-label="Purchase Mitech">
-                    <i class="fal fa-shopping-cart"></i>
-                </a>
-            </div>
-        </div>
-        <!-- End Toolbar -->
-        <!-- Start Quick Link -->
-        <div class="demo-option-wrapper">
-            <div class="demo-panel-header">
-                <div class="title">
-                    <h6 class="heading mt-30">IT Solutions Mitech - Technology, IT Solutions &amp; Services Html5 Template</h6>
-                </div>
-
-                <div class="panel-btn mt-20">
-                    <a class="ht-btn ht-btn-md" href="https://1.envato.market/c/417168/275988/4415?subId1=hastheme&amp;subId2=mitech-preview&amp;subId3=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource&amp;u=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource"><i class="far fa-shopping-cart me-2"></i> Buy Now </a>
-                </div>
-            </div>
-            <div class="demo-quick-option-list">
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Appointment">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/home-01.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Infotechno">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/home-02.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Processing">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/home-03.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Services">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/home-04.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Resolutions">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/home-05.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Cybersecurity">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/home-06.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Modern IT Company">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/modern-it-company.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Machine Learning">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/machine-learning.webp' %}" alt="Images">
-                </a>
-                <a class="link hint--bounce hint--black hint--top hint--dark" href="" aria-label="Software Innovation">
-                    <img class="img-fluid" src="{%static 'app/assets/images/demo-images/software-innovation.webp' %}" alt="Images">
-                </a>
-            </div>
-        </div>
-        <!-- End Quick Link -->
-    </div>
-    <!-- End Toolbar -->
+ 
 
     <!--====================  mobile menu overlay ====================-->
     <div class="mobile-menu-overlay" id="mobile-menu-overlay">

@@ -6,7 +6,10 @@
 {% block main-content %} 
 
 
-<h3 style="text-align: center;"> You search:  {{ query }} </h3>
+
+    
+
+    
 
     <!-- breadcrumb-area start -->
     <div class="breadcrumb-area">
@@ -14,6 +17,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb_box text-center">
+                        <h2 class="breadcrumb-title"> You search: {{ query }}</h2>
                         <h2 class="breadcrumb-title"><a href="{% url 'techit:contact_us' %}">Contact us</a></h2>
                         <!-- breadcrumb-list start -->
                         <ul class="breadcrumb-list">
@@ -29,13 +33,15 @@
         </div>
     </div>
     <!-- breadcrumb-area end -->
+    {% if query %}
 
         <!--====================  Blog Area Start ====================-->
+        {% if queryset8 %}
         <div class="blog-pages-wrapper section-space--ptb_100">
             <div class="container">
                 <div class="row">
                     
-                    {% if queryset8 %}
+                    
                         
                     
                         
@@ -81,194 +87,18 @@
 
                     </div>
                     {% endfor %}
-                    {% endif %}
+                    
                 </div>
             </div>
         </div>
+        {% else %}
+        {% endif %}
         <!--====================  Blog Area End  ====================-->
 
-            <!--======== Tabs Wrapper Start ======== -->
-            <div class="tabs-wrapper bg-gray section-space--ptb_100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title-wrapper text-center section-space--mb_60 wow move-up animated" style="visibility: visible;">
-                                <h6 class="section-sub-title mb-20">discover our company</h6>
-                                <h3 class="section-title">We’ve been thriving in<span class="text-color-primary"> 38 years</span> </h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12 ht-tab-wrap">
-                            <div class="text-center  ">
-                                <ul class="nav justify-content-center ht-tab-menu ht-tab-menu_two" role="tablist">
-                                    <li class="tab__item nav-item active">
-                                        <a class="nav-link active" id="nav-tab1" data-bs-toggle="tab" href="#tab_list_06" role="tab" aria-selected="true">Our mission</a>
-                                    </li>
-                                    <li class="tab__item nav-item">
-                                        <a class="nav-link" id="nav-tab2" data-bs-toggle="tab" href="#tab_list_07" role="tab" aria-selected="false">Our services</a>
-                                    </li>
-                                    <li class="tab__item nav-item ">
-                                        <a class="nav-link" id="nav-tab3" data-bs-toggle="tab" href="#tab_list_08" role="tab" aria-selected="false">Technology partners</a>
-                                    </li>
-                                    <li class="tab__item nav-item ">
-                                        <a class="nav-link" id="nav-tab5" data-bs-toggle="tab" href="#tab_list_09" role="tab" aria-selected="false">Our awards</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="tab-content ht-tab__content">
-
-                                <div class="tab-pane fade show active" id="tab_list_06" role="tabpanel">
-                                    <div class="tab-history-wrap section-space--mt_40">
-                                        <div class="row">
-                                            <div class="col-lg-6 ">
-                                                <div class="tab-history-image video-popup mt-30">
-                                                    <a href="https://www.youtube.com/watch?v=9No-FiEInLA" class="video-link">
-                                                        <div class="single-popup-wrap">
-                                                            <img class="img-fluid" src="{%static 'app/assets/images/bg/home-processing-video-intro-slider-slide-01-image-01-570x350.webp' %}" alt="">
-                                                            <div class="ht-popup-video video-button">
-                                                                <div class="video-mark">
-                                                                    <div class="wave-pulse wave-pulse-1"></div>
-                                                                    <div class="wave-pulse wave-pulse-2"></div>
-                                                                </div>
-                                                                <div class="video-button__two">
-                                                                    <div class="video-play">
-                                                                        <span class="video-play-icon"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5 offset-lg-1 ">
-                                                <div class="tab-content-inner  mt-30">
-                                                    <div class="text mb-30">We’re available for 8 hours a day! <br>Contact to require a detailed analysis and assessment of your plan.</div>
-                                                    <ul class="check-list section-space--mb_40">
-                                                        <li class="list-item"><i class="fas fa-check"></i> IT Consultancy </li>
-                                                        <li class="list-item"><i class="fas fa-check"></i>  IT Design </li>
-                                                        <li class="list-item"><i class="fas fa-check"></i> Desktop Computing </li>
-                                                        <li class="list-item"><i class="fas fa-check"></i> Software Engineering </li>
-                                                    </ul>
-
-                                                    <div class="tab-button">
-                                                        <a class="btn-text" href="#">
-                                                            <span class="button-text">Let's get started <i class="far fa-long-arrow-right"></i></span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="tab_list_07" role="tabpanel">
-                                    <div class="tab-history-wrap section-space--mt_60">
-                                        <div class="row">
-                                            
-                                            {% if queryset4 %}
-                                                
-                                            
-                                                
-                                            {% for s in queryset4 %}
-                                              
-                                            
-                                            <div class="col-lg-4 col-md-6">
-                                                <!-- ht-box-icon Start -->
-                                                <a href="#" class="ht-large-box-images style-04">
-                                                    <div class="large-image-box">
-                                                        <div class="box-image">
-                                                            <div class="default-image">
-                                                                <img class="img-fluid" src="{{ s.image.url }}" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="content">
-                                                            <h5 class="heading">{{ s.title }}</h5>
-                                                            <div class="text">{{ s.description }}
-                                                            </div>
-                                                            <div class="box-images-arrow">
-                                                                <span class="button-text">Discover now</span>
-                                                                <i class="far fa-long-arrow-right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <!-- ht-box-icon End -->
-                                            </div>
-                                            {% endfor %}
-                                            {% endif %}
-                                        
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="tab_list_08" role="tabpanel">
-                                    <div class="tab-history-wrap section-space--mt_60 brand-logo-slider__one">
-                                        <div class="modern-grid--6">
-
-                                            {% for b in brands %}
-                                              
-                                            
-                                            <div class="brand-logo brand-logo--slider">
-                                                <a href="#">
-                                                    <div class="brand-logo__image">
-                                                        <img src="{{ b.image.url }}" class="img-fluid" alt="">
-                                                    </div>
-                                                    <div class="brand-logo__image-hover">
-                                                        <img src="{{ b.hover_image.url }}" class="img-fluid" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            {% endfor %}
-                                            
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="tab_list_09" role="tabpanel">
-                                    <div class="tab-history-wrap section-space--mt_20">
-                                        <div class="row">
-                                            
-                                            {% if queryset5 %}
-                                                
-                                            
-                                                
-                                            {% for a in queryset5 %}
-                                              
-                                            
-                                            <div class="col-lg-6">
-                                                <div class="ht-box-images style-08 move-up animate">
-                                                    <div class="image-box-wrap">
-                                                        <div class="box-image">
-                                                            <div class="image">
-                                                                <img src="{{ a.image.url }}" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="content">
-                                                            <h6 class="heading">{{ a.title }} </h6>
-                                                            <div class="text">{{ a.description }}</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {% endfor %}
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--======== Tabs Wrapper End ======== -->
+            
 
             <!--===========  feature-images-wrapper  Start =============-->
+            {% if queryset7 %}
             <div class="feature-images-wrapper section-space--ptb_100">
                 <div class="container">
 
@@ -287,7 +117,7 @@
                             <div class="feature-images__one">
                                 <div class="row">
                                     
-                                    {% if queryset7 %}
+                                    
                                         
                                     
                                         
@@ -322,7 +152,7 @@
                                     </div>
 
                                     {% endfor %}
-                                    {% endif %}
+                                    
 
                                     
 
@@ -335,8 +165,11 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            {% endif %}
             <!--===========  feature-images-wrapper  End =============-->
             <!-- ============ Team Member Wrapper Start =============== -->
+            {% if queryset3 %}
             <div class="team-member-wrapper section-space--pt_100 section-space--pb_40">
                 <div class="container">
                     <div class="row">
@@ -356,7 +189,7 @@
                             <div class="row">
 
                                 
-                                {% if queryset3 %}
+                                
                                     
                                 
                                     
@@ -387,7 +220,7 @@
                                 </div>
 
                                 {% endfor %}
-                                {% endif %}
+                                
                                
                               
                             </div>
@@ -395,9 +228,12 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            {% endif %}
             <!-- ============ Team Member Wrapper End =============== -->
 
             <!--===========  Projects wrapper Start =============-->
+            {% if queryset2 %}
             <div class="projects-wrapper projectinfotechno-bg section-space--ptb_100">
                 <div class="container">
 
@@ -438,7 +274,7 @@
                                     </div>
 
                                     
-                                    {% if queryset2 %}
+                                    
                                         
                                     
                                         
@@ -468,7 +304,7 @@
                                         <!-- Projects Wrap End -->
                                     </div>
                                     {% endfor %}
-                                    {% endif %}
+                                    
 
                                     
                                    
@@ -484,9 +320,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>'
+            {% else %}
+            {% endif %}
             <!--===========  Projects wrapper End =============-->
         <!--===========  feature-large-images-wrapper  Start =============-->
+        {% if queryset6 %}
         <div class="feature-large-images-wrapper section-space--ptb_100">
             <div class="container">
 
@@ -532,7 +371,7 @@
                         <div class="feature-images__six">
                             <div class="row">
                                 
-                                {% if queryset6 %}
+                                
                                     
                                 
                                     
@@ -564,7 +403,7 @@
 
 
                                 {% endfor %}
-                                {% endif %}
+                                
                                
 
                             </div>
@@ -576,9 +415,12 @@
                 </div>
             </div>
         </div>
+        {% else %}
+        {% endif %}
         <!--===========  feature-large-images-wrapper  End =============-->
 
             <!--====================  testimonial section ====================-->
+            {% if queryset1 %}
             <div class="testimonial-slider-area bg-gray section-space--ptb_100">
                 <div class="container">
                     <div class="row">
@@ -618,7 +460,7 @@
                                         </div>
                                     </div>
                                     
-                                    {% if queryset1 %}
+                                    
                                         
                                     
                                         
@@ -655,7 +497,7 @@
 
                                         {% endfor %}
                                         
-                                        {% endif %}
+                                       
                                        
                                         
                                     </div>
@@ -666,9 +508,12 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            {% endif %}
             <!--====================  End of testimonial section  ====================-->
-
-
+            {% else %}
+            no result
+            {% endif %}
 
 
 {% endblock main-content %}
